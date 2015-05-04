@@ -2,13 +2,13 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.text.LabelView;
 
 
 public class Actions extends JFrame{
@@ -17,6 +17,7 @@ public class Actions extends JFrame{
 	private JLabel lable1 = new JLabel();
 	private JLabel lable2 = new JLabel();
 	private JLabel lable3 = new JLabel();
+	private JLabel lable4 = new JLabel();
 	private JPanel panel1 = new JPanel(new GridLayout(1,4));
 	private JPanel panel2 = new JPanel(new FlowLayout());
 	
@@ -27,6 +28,7 @@ public class Actions extends JFrame{
 		panel1.add(lable1);
 		panel1.add(lable2);
 		panel1.add(lable3);
+		panel1.add(lable4);
 			
 		panel2.add(jbtRefreshButton);
 		
@@ -44,12 +46,13 @@ public class Actions extends JFrame{
 			
 			 int[] deck = new int[52];
 			    
-			    // Initialize cards 初始化--0
+			
+			    // Initialize cards 
 			    for (int i = 0; i < deck.length; i++){
-			      deck[i] = i;
+			      deck[i] = i+1;
 			    }
 			    
-			    // Shuffle the cards--洗牌
+			    // Shuffle the cards
 			    for (int i = 0; i < deck.length; i++) {
 			      // Generate an index randomly
 			      int index = (int)(Math.random() * deck.length);
@@ -58,28 +61,19 @@ public class Actions extends JFrame{
 			      deck[index] = temp;
 			    }
 
-			    
+			  
 			    	
 			    ImageIcon card1 = new ImageIcon("card/"+deck[1]+".png");
 			    ImageIcon card2 = new ImageIcon("card/"+deck[2]+".png");
 			    ImageIcon card3 = new ImageIcon("card/"+deck[3]+".png");
 			    ImageIcon card4 = new ImageIcon("card/"+deck[4]+".png");
 			    	
-			    panel1.add(lable1(card1));
-			    lable2(card2);
-			    lable3(card3);
-			    lable4(card4);
+			    lable1.setIcon(card1);
+			    lable2.setIcon(card2);
+			    lable3.setIcon(card3);
+			    lable4.setIcon(card4);
 			    
-			
-			
-			
 		}
-		
-		
-		
-		
-		
-		
 		
 	}
 	
