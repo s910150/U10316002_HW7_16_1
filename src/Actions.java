@@ -13,28 +13,33 @@ import javax.swing.JPanel;
 
 public class Actions extends JFrame{
 	
+	//new objects to use
 	private JButton jbtRefreshButton = new JButton ("Refresh");
-	private JLabel lable1 = new JLabel();
-	private JLabel lable2 = new JLabel();
-	private JLabel lable3 = new JLabel();
-	private JLabel lable4 = new JLabel();
+	private JLabel label1 = new JLabel();
+	private JLabel label2 = new JLabel();
+	private JLabel label3 = new JLabel();
+	private JLabel label4 = new JLabel();
 	private JPanel panel1 = new JPanel(new GridLayout(1,4));
 	private JPanel panel2 = new JPanel(new FlowLayout());
 	
+	//constructor of Actions
 	public Actions(){
 		
 	
-		
-		panel1.add(lable1);
-		panel1.add(lable2);
-		panel1.add(lable3);
-		panel1.add(lable4);
+		//add 4 labels on panel1
+		panel1.add(label1);
+		panel1.add(label2);
+		panel1.add(label3);
+		panel1.add(label4);
 			
+		//add 1 button(fresh) on panel2
 		panel2.add(jbtRefreshButton);
 		
+		//add panel1 and panel2 to frame
 		add(panel1,BorderLayout.NORTH);
 		add(panel2,BorderLayout.SOUTH);
 		
+		//call the addActionListener() to execute the button action
 		jbtRefreshButton.addActionListener(new ButtonListener());
 	}
 	
@@ -44,10 +49,11 @@ public class Actions extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e){
 			
+			//declare an array to store the card 
 			 int[] deck = new int[52];
 			    
 			
-			    // Initialize cards 
+			    // Initialize cards to 0
 			    for (int i = 0; i < deck.length; i++){
 			      deck[i] = i+1;
 			    }
@@ -62,16 +68,17 @@ public class Actions extends JFrame{
 			    }
 
 			  
-			    	
+			    //new 4 imageIcon to store the 4 shuffled cards 
 			    ImageIcon card1 = new ImageIcon("card/"+deck[1]+".png");
 			    ImageIcon card2 = new ImageIcon("card/"+deck[2]+".png");
 			    ImageIcon card3 = new ImageIcon("card/"+deck[3]+".png");
 			    ImageIcon card4 = new ImageIcon("card/"+deck[4]+".png");
 			    	
-			    lable1.setIcon(card1);
-			    lable2.setIcon(card2);
-			    lable3.setIcon(card3);
-			    lable4.setIcon(card4);
+			    //put the 4 imageIcon to the 4 labels
+			    label1.setIcon(card1);
+			    label2.setIcon(card2);
+			    label3.setIcon(card3);
+			    label4.setIcon(card4);
 			    
 		}
 		
